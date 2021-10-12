@@ -1,38 +1,141 @@
-.App {
+.auth-card {
+  text-align: center;
+  color: lawngreen;
+}
+
+.homecard {
+  max-width: 400px;
+  /* min-height: 655px; */
+  height: max-content;
+  margin: 26px auto;
+}
+
+.heading {
+  text-align: center;
+  color: lavender;
+}
+
+body {
+  background-color: teal;
+  margin: auto;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.logInForm {
+  width: 50%;
+  text-align: center !important;
+  display: inline-block;
+}
+
+input[type="text"],
+input[type="password"] {
+  text-align: center !important;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: rebeccapurple;
+  color: beige;
+  padding: 10px 28px;
+  border-radius: 15%;
+  margin-top: 10px;
+  font-size: medium;
+  text-decoration: none;
+}
+.btn1 {
+  background-color: rebeccapurple;
+  color: beige;
+  padding: 8px 20px;
+  border-radius: 15%;
+  margin-top: 15px;
+  font-size: small;
+}
+.btn2 {
+  background-color: rebeccapurple;
+  color: beige;
+  padding: 8px 18px;
+  border-radius: 10%;
+  margin-top: 12px;
+  font-size: small;
+}
+
+.logInLabel {
+  color: azure;
+  font-size: large;
+}
+
+.paycard {
+  max-width: 600px;
+  margin: auto;
+  /* min-height: 655px; */
+  height: max-content;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.option {
+  font-family: initial;
+  color: aliceblue;
+  font-size: 22px;
+  text-decoration: none;
+  margin: auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.userDiv {
+  margin: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.movieCard {
+  color: chartreuse;
+  font-family: ui-monospace;
+  font-size: 20px;
+  text-align: center;
 }
-
-.App-link {
-  color: #61dafb;
+.moviePara p {
+  margin: 10px;
+  text-align: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#paymentLink {
+  text-decoration: none;
+  color: azure;
+}
+.bookedMovie {
+  color: bisque;
+  font-size: medium;
+}
+.highlight {
+  margin: auto;
+}
+.footer-align {
+  margin: auto;
+  border: solid 1px rgba(128, 128, 128, 0.5);
+  text-align: center;
+  font-style: italic;
+  font-weight: bolder;
+  font-size: x-large;
+  color: chocolate;
+}
+#nav-mobile {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+  font-family: "Courier New", Courier, monospace;
+}
+.page-footer {
+  margin: auto;
+}
+.footer-div {
+  background-color: lightseagreen;
+  color: bisque;
+}
+.main-heading {
+  text-align: center;
+  color: burlywood;
 }
