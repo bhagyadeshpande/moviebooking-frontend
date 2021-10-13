@@ -11,17 +11,19 @@ const Mybooking = () =>{
     const [data,setData] = useState([]);
 
     useEffect(()=>{
+        let isMounted = true;
         fetch(`${BASE_URL}/bookmovie/mybookedmovies`,{
             headers:{
                 "Authorization": "Bearer "+localStorage.getItem("jwt")
             }
         }).then(res=>res.json())
         .then(result=>{
-         console.log(result);
+         if(isMounted)
             setData(result.mymovie)
         }).catch(err=>{
             console.log(err);
         })
+        return () => { isMounted = false };
     },[])
 
     const CancelBooking = (movieid) => { 
