@@ -6,7 +6,8 @@ import "../../App.css";
 import M from 'materialize-css'
 
 const Booking = () => {
-    const BASE_URL = "http://localhost:5000";
+    //const BASE_URL = "http://localhost:5000";
+    const BASE_URL = "https://tktbooking.herokuapp.com";
     const {state,dispatch} = useContext(UserContext);
     const [data,setData] = useState([]);
     const history = useHistory();

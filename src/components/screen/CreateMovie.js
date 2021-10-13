@@ -14,7 +14,8 @@ const CreateMovie = () =>{
     const[cast,setCast] = useState("");
     const [image,setImage] = useState("");
     const [url,setUrl] = useState("");
-    const BASE_URL = "http://localhost:5000";    
+    //const BASE_URL = "http://localhost:5000";    
+    const BASE_URL = "https://tktbooking.herokuapp.com";
 
     useEffect(()=>{
         if(url){

@@ -7,8 +7,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import ContactPhoneOutlinedIcon from '@mui/icons-material/ContactPhoneOutlined';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
-const Footer = () =>{
-  
+const Footer = () =>{  
     return(
         <footer className="page-footer">
           <div className="container">

@@ -11,7 +11,8 @@ const Home = () => {
     const [data,setData] = useState([]);
     const [seat,setSeat] = useState(0);
     const [total,setTotal] = useState(0);
-    const BASE_URL = "http://localhost:5000";
+    //const BASE_URL = "http://localhost:5000";
+    const BASE_URL = "https://tktbooking.herokuapp.com";
     //  console.log(state);
     useEffect(()=>{
         fetch(`${BASE_URL}/movie/allmovies`,{
