@@ -36,9 +36,9 @@ const NavBar = () => {
         //     <strong>{state.name}</strong>
         //   </Link>
         // </li>,
-        <div className="userDiv">    
-        
+        <div className="userDiv">            
           <li><Link className="option" to="/mybooking">My Booking</Link></li>,
+          <li><Link className="option" to="/">Home</Link></li>,
           <li style={{marginTop:'-18px'}}>
            <button className="btn1 #c62828 red darken-3"
              onClick={()=>{

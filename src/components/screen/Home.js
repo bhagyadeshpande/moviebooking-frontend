@@ -13,18 +13,21 @@ const Home = () => {
     const [total,setTotal] = useState(0);
     //const BASE_URL = "http://localhost:5000";
     const BASE_URL = "https://tktbooking.herokuapp.com";
-    //  console.log(state);
+    
     useEffect(()=>{
+        let isMounted = true;
         fetch(`${BASE_URL}/movie/allmovies`,{
             headers: {
                 "Authorization":"Bearer "+localStorage.getItem("jwt")
             }
         }).then(res=>res.json())        
-        .then(result=>{                    
+        .then(result=>{     
+            if(isMounted)               
              setData(result.movies);
         }).catch((err)=>{
             console.log(err);
         })
+        return () => { isMounted = false };
     }, [])
 
 

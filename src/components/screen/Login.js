@@ -12,6 +12,7 @@ const Login = () =>{
     const[email, setEmail] = useState("");
     //const BASE_URL = "http://localhost:5000";
     const BASE_URL = "https://tktbooking.herokuapp.com";
+    
     const PostData = () =>{
         
         if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
@@ -64,7 +65,7 @@ const Login = () =>{
            onChange={(e)=>setPassword(e.target.value)} 
             />
            <button className="btn waves-effect waves-light #64b5f6 blue darken-1"
-           onClick={()=>PostData()}
+           onClick={PostData}
            >Login </button>
            <h4>
              <Link to="/signup" style={{color:'bisque', textDecoration:'none'}}>Don't have an account ?</Link>

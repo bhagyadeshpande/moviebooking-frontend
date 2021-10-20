@@ -16,7 +16,7 @@ const CreateMovie = () =>{
     const [url,setUrl] = useState("");
     //const BASE_URL = "http://localhost:5000";    
     const BASE_URL = "https://tktbooking.herokuapp.com";
-
+    
     useEffect(()=>{
         if(url){
              fetch(`${BASE_URL}/movie/createmovie`,{

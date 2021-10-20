@@ -17,6 +17,7 @@ const Payment = (props) => {
     // console.log(typeof(movieid));
     //const BASE_URL = "http://localhost:5000";
     const BASE_URL = "https://tktbooking.herokuapp.com";
+    
     const [data,setData] = useState([])
     
 
