@@ -46,8 +46,7 @@ const Booking = () => {
         })
     }
 
-    return(
-        //         
+    return(              
         <>        
         <div className="heading"><h1 className="heading-text">All Booking</h1></div>
         {            
