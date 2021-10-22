@@ -27,14 +27,14 @@ const Login = () =>{
                 email,password
             })
         }).then(res=>res.json())
-        .then(data=>{
-            
+        .then(data=>{           
             if(data.error){
                 M.toast({html:data.error,classes:"#c62828 red darken-3"})
-            }else{                
+            }
+            else{                
                 localStorage.setItem("jwt",JSON.stringify(data.token))
                 localStorage.setItem("user",JSON.stringify(data.user))
-                dispatch({type:"USER",payload:data.user})
+                dispatch({type:"USER",payload:JSON.stringify(data.user)})
                 M.toast({html:"Signedin Success",classes:"#43a047 green darken-1"})
                 history.push("/")
             }
