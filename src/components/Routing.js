@@ -13,7 +13,6 @@ import CurrentUser from './screen/CurrentUser'
 import '../App.css'
 
 const Routing = () => {
-
   const history = useHistory();
   // eslint-disable-next-line no-unused-vars
   const {state,dispatch} = useContext(UserContext);

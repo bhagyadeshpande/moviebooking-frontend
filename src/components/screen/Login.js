@@ -14,10 +14,10 @@ const Login = () =>{
     const BASE_URL = "https://tktbooking.herokuapp.com";
     
     const PostData = () =>{        
-        if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            M.toast({html:"Invalid email",classes:"#c62828 red darken-3"})
-            return;
-        }
+        // if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+        //     M.toast({html:"Invalid email",classes:"#c62828 red darken-3"})
+        //     return;
+        // }
         fetch(`${BASE_URL}/auth/signin`,{
             method: "post",
             headers: {
@@ -67,7 +67,7 @@ const Login = () =>{
            onClick={PostData}
            >Login </button>
            <h4>
-             <Link to="/signup" style={{color:'bisque', textDecoration:'none'}}>Don't have an account ?</Link>
+        <Link to="/signup" style={{color:'bisque', textDecoration:'none'}}>Don't have an account ?</Link>
          </h4>
          </form>
         </div>        
