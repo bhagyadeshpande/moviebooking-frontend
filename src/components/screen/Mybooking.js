@@ -4,8 +4,8 @@ import M from 'materialize-css';
 //import DeleteIcon from '@mui/icons-material/Delete';
 
 const Mybooking = () =>{
-    //const BASE_URL = "http://localhost:5000";
-    const BASE_URL = "https://tktbooking.herokuapp.com";
+    const BASE_URL = "http://localhost:5000";
+    //const BASE_URL = "https://tktbooking.herokuapp.com";
     
     // eslint-disable-next-line no-unused-vars
     const {state,dispatch} = useContext(UserContext);
@@ -15,7 +15,7 @@ const Mybooking = () =>{
         let isMounted = true;
         fetch(`${BASE_URL}/bookmovie/mybookedmovies`,{
             headers:{
-                "Authorization": "Bearer "+localStorage.getItem("jwt")
+                "Authorization": "Bearer "+ JSON.parse(localStorage.getItem("jwt"))
             }
         }).then(res=>res.json())
         .then(result=>{
@@ -31,7 +31,7 @@ const Mybooking = () =>{
         fetch(`${BASE_URL}/bookmovie/delete/${movieid}`,{
             method:'delete',
             headers:{
-                "Authorization":"Bearer "+localStorage.getItem("jwt")
+                "Authorization":"Bearer "+ JSON.parse(localStorage.getItem("jwt"))
             }
         }).then(res=>res.json())
         .then(result=>{

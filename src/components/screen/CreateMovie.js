@@ -14,8 +14,8 @@ const CreateMovie = () =>{
     const[cast,setCast] = useState("");
     const [image,setImage] = useState("");
     const [url,setUrl] = useState("");
-    //const BASE_URL = "http://localhost:5000";    
-    const BASE_URL = "https://tktbooking.herokuapp.com";
+    const BASE_URL = "http://localhost:5000";    
+    //const BASE_URL = "https://tktbooking.herokuapp.com";
     
     useEffect(()=>{
         if(url){
@@ -23,7 +23,7 @@ const CreateMovie = () =>{
                 method:"POST",
                 headers:{
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer "+localStorage.getItem("jwt")
+                    "Authorization": "Bearer "+ JSON.parse(localStorage.getItem("jwt"))
                 },
                 body:JSON.stringify({
                     title,

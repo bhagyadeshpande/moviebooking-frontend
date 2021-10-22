@@ -10,11 +10,10 @@ const Login = () =>{
     const history = useHistory();
     const [password,setPassword] = useState("");
     const[email, setEmail] = useState("");
-    //const BASE_URL = "http://localhost:5000";
-    const BASE_URL = "https://tktbooking.herokuapp.com";
+    const BASE_URL = "http://localhost:5000";
+    //const BASE_URL = "https://tktbooking.herokuapp.com";
     
-    const PostData = () =>{
-        
+    const PostData = () =>{        
         if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
             M.toast({html:"Invalid email",classes:"#c62828 red darken-3"})
             return;
@@ -33,7 +32,7 @@ const Login = () =>{
             if(data.error){
                 M.toast({html:data.error,classes:"#c62828 red darken-3"})
             }else{                
-                localStorage.setItem("jwt",data.token)
+                localStorage.setItem("jwt",JSON.stringify(data.token))
                 localStorage.setItem("user",JSON.stringify(data.user))
                 dispatch({type:"USER",payload:data.user})
                 M.toast({html:"Signedin Success",classes:"#43a047 green darken-1"})

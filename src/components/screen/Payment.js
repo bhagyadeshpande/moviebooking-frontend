@@ -15,8 +15,8 @@ const Payment = (props) => {
         cardName:'',cardNum:'',cvvNum:'',expDate:''});
     const movieid = JSON.parse(localStorage.getItem("movie"))
     // console.log(typeof(movieid));
-    //const BASE_URL = "http://localhost:5000";
-    const BASE_URL = "https://tktbooking.herokuapp.com";
+    const BASE_URL = "http://localhost:5000";
+    //const BASE_URL = "https://tktbooking.herokuapp.com";
     
     const [data,setData] = useState([])
     
@@ -24,7 +24,7 @@ const Payment = (props) => {
     useEffect(()=>{
         fetch(`${BASE_URL}/movie/${movieid}`,{
             headers:{
-                "Authorization":"Bearer "+localStorage.getItem("user")
+                "Authorization":"Bearer "+ JSON.parse(localStorage.getItem("user"))
             }
         }).then(res=>res.json())
         .then(movie=>{
@@ -42,7 +42,7 @@ const Payment = (props) => {
              method:'post',
              headers:{
                  "Content-Type":"application/json",
-                 "Authorization":"Bearer "+localStorage.getItem("jwt")
+                 "Authorization":"Bearer "+ JSON.parse(localStorage.getItem("jwt"))
              },
              body:
                 JSON.stringify({     

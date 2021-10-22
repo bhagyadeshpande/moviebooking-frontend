@@ -4,15 +4,15 @@ import {UserContext} from '../../App'
 import M from 'materialize-css'
 
 const User = () => {
-  //const BASE_URL = "http://localhost:5000";
-  const BASE_URL = "https://tktbooking.herokuapp.com";
+  const BASE_URL = "http://localhost:5000";
+  //const BASE_URL = "https://tktbooking.herokuapp.com";
   
   const {state,dispatch} = useContext(UserContext);
   const [data,setData] = useState([]);
   useEffect(()=>{
     fetch(`${BASE_URL}/user/alluser`,{
       headers: {
-        "Authorization":"Bearer "+localStorage.getItem("jwt")
+        "Authorization":"Bearer "+ JSON.parse(localStorage.getItem("jwt"))
       }
     }).then(res=>res.json())
     .then(result=>{
@@ -28,7 +28,7 @@ const User = () => {
     fetch(`${BASE_URL}/user/${userid}`,{
       method:'delete',
       headers:{
-        "Authorization":"Bearer "+localStorage.getItem("jwt")
+        "Authorization":"Bearer "+ JSON.parse(localStorage.getItem("jwt"))
       }
     }).then(res => res.json())
     .then(result=>{

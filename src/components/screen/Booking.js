@@ -6,15 +6,15 @@ import "../../App.css";
 import M from 'materialize-css'
 
 const Booking = () => {
-    //const BASE_URL = "http://localhost:5000";
-    const BASE_URL = "https://tktbooking.herokuapp.com";
+    const BASE_URL = "http://localhost:5000";
+    //const BASE_URL = "https://tktbooking.herokuapp.com";
     const {state,dispatch} = useContext(UserContext);
     const [data,setData] = useState([]);
     const history = useHistory();
     useEffect(()=>{
         fetch(`${BASE_URL}/bookmovie/allbookedmovies`,{
             headers:{
-                "Authorization":"Bearer "+localStorage.getItem("jwt")
+                "Authorization":"Bearer "+ JSON.parse(localStorage.getItem("jwt"))
             }
         }).then(res=>res.json())
         .then(result=>{            
@@ -28,7 +28,7 @@ const Booking = () => {
         fetch(`${BASE_URL}/bookmovie/${movieid}`,{
             method:'delete',
             headers:{
-                "Authorization":"Bearer "+localStorage.getItem("jwt")
+                "Authorization":"Bearer "+ JSON.parse(localStorage.getItem("jwt"))
             }
         }).then(res => res.json())
         .then(result=>{

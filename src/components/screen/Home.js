@@ -11,14 +11,14 @@ const Home = () => {
     const [data,setData] = useState([]);
     const [seat,setSeat] = useState(0);
     const [total,setTotal] = useState(0);
-    //const BASE_URL = "http://localhost:5000";
-    const BASE_URL = "https://tktbooking.herokuapp.com";
+    const BASE_URL = "http://localhost:5000";
+    //const BASE_URL = "https://tktbooking.herokuapp.com";
     
     useEffect(()=>{
         let isMounted = true;
         fetch(`${BASE_URL}/movie/allmovies`,{
             headers: {
-                "Authorization":"Bearer "+localStorage.getItem("jwt")
+                "Authorization":"Bearer "+ JSON.parse(localStorage.getItem("jwt"))
             }
         }).then(res=>res.json())        
         .then(result=>{     
@@ -30,12 +30,11 @@ const Home = () => {
         return () => { isMounted = false };
     }, [])
 
-
     const deleteMovie = (movieid) =>{
         fetch(`${BASE_URL}/movie/${movieid}`,{
             method:'delete',
             headers:{
-                "Authorization":"Bearer "+localStorage.getItem("jwt")
+                "Authorization":"Bearer "+JSON.parse(localStorage.getItem("jwt"))
             }
         }).then(res => res.json())
         .then(result=>{
