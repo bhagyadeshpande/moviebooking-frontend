@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import '../../App.css'
-//import M from 'materialize-css';
-//const BASE_URL = "http://localhost:5000";
-const BASE_URL = "https://tktbooking.herokuapp.com";
+import M from 'materialize-css';
+const BASE_URL = "http://localhost:5000";
+//const BASE_URL = "https://tktbooking.herokuapp.com";
 
 const Signup = () =>{
 
@@ -14,9 +14,9 @@ const Signup = () =>{
 
     const PostData = () =>{
         // eslint-disable-next-line no-useless-escape
-   /* if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+   if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
     M.toast({html:"Invalid email",classes:"#c62828 red darken-3"})
-    }*/
+    }
     fetch(`${BASE_URL}/auth/signup`,{    
     method: 'post',
     headers: { 

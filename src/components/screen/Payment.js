@@ -15,8 +15,8 @@ const Payment = (props) => {
         cardName:'',cardNum:'',cvvNum:'',expDate:''});
     const movieid = JSON.parse(localStorage.getItem("movie"))
     // console.log(typeof(movieid));
-    //const BASE_URL = "http://localhost:5000";
-    const BASE_URL = "https://tktbooking.herokuapp.com";
+    const BASE_URL = "http://localhost:5000";
+    //const BASE_URL = "https://tktbooking.herokuapp.com";
     
     const [data,setData] = useState([])
     
