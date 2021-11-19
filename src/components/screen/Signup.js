@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '../../App.css'
 import M from 'materialize-css';
 //const BASE_URL = "http://localhost:5000";
@@ -7,7 +7,7 @@ const BASE_URL = "https://tktbooking.herokuapp.com";
 
 const Signup = () =>{
 
-    const history = useHistory();
+    //const history = useHistory();
     const [name,setName] = useState("")
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
@@ -34,7 +34,8 @@ const Signup = () =>{
               console.log(data.error);
             }else{
                //M.toast({html:data.message,classes:"#43a047 green darken-1"})
-               history.push("/login")
+            //    history.push("/login")
+            window.location.href="/login";
             }
         }).catch((err) =>{
             console.log(err)
