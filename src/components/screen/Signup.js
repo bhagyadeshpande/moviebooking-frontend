@@ -35,7 +35,8 @@ const Signup = () =>{
             }else{
                //M.toast({html:data.message,classes:"#43a047 green darken-1"})
             //    history.push("/login")
-            window.location.href="/login";
+            console.log("inside the signup response", data);
+            window.location.href = "/login";
             }
         }).catch((err) =>{
             console.log(err)
